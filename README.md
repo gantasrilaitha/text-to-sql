@@ -11,3 +11,8 @@ All the paraphrased datasets are merged & Navie Bayes Classifier is applied to c
 For translation of text to SQL:
   a)Used unparaphrased wikisql dataset and applied SEQ2SEQ model to obtain simple queries(Evaluation metric used: BLU Score & Accuracy)
   b)Used spider dataset and applied pretrained BART model to achieve complex queries.(Evaluation metric used:Rouge Score)
+
+bayes_wikisql.ipynb:contains bayes classifier to identify aggregates to be used in sql query
+text_to_sql_wikisql_paraphrasing.ipynb: contains paraphrased wikisql dataset& implemented seq2seq model for sql generation
+text_to_sql_spider_BART.ipynb: contians BART model for complex queries
+text_to_sql_wikisql_w/oparaphrase.ipynb: contains seq2seq model for text to sql withouto paraphrasing the dataset
