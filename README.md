@@ -14,5 +14,5 @@ For translation of text to SQL:
 
 >bayes_wikisql.ipynb:contains bayes classifier to identify aggregates to be used in sql query 
 >text_to_sql_wikisql_paraphrasing.ipynb: contains paraphrased wikisql dataset& implemented seq2seq model for sql generation
->text_to_sql_wikisql_w/oparaphrase.ipynb: contains seq2seq model for text to sql withouto paraphrasing the dataset
+>text_to_sql_wikisql_w/oparaphrase.ipynb: contains seq2seq model for text to sql without paraphrasing the dataset
 >text_to_sql_spider_BART.ipynb: contians BART model for complex queries
