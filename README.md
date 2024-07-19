@@ -1,18 +1,30 @@
-# text-to-sql
-NLP project of identifying aggregates used in sql query and teanslate text to sql
+# Translation of Text-To-Sql 
+Translating natural language question to sel query wrt to database schema.
+The goal is to create an effective system for generating SQL queries from textual questions, enabling natural language interfaces to databases.
 
-We used wikisql and spider dataset.
-Wikisql dataset can be downloaded from :https://drive.google.com/drive/folders/13f2MrdpieC9QGXM_DJnj2f1Hs6ZBh2ZT?usp=sharing
-Spider dataset can be downloaded from :https://drive.google.com/uc?export=download&id=1TqleXec_OykOYFREKKtschzY29dUcVAQ
+## **Datasets Used**
+- **WikiSQL Dataset**: [Download WikiSQL Dataset](https://drive.google.com/drive/folders/13f2MrdpieC9QGXM_DJnj2f1Hs6ZBh2ZT?usp=sharing)
+- **Spider Dataset**: [Download Spider Dataset](https://drive.google.com/uc?export=download&id=1TqleXec_OykOYFREKKtschzY29dUcVAQ)
 
-Worked with paraphrased wikisql dataset(used T5_Paraphrased_Paws pretrained model to paraphrase the questions in a way that its sematics remian unchanged.)We sliced the entire train & validation dataset of wikisql & performed paraphrasing.
-All the paraphrased datasets are merged & Navie Bayes Classifier is applied to classify the aggregates (MIN,MAX,COUNT,AVG..)that would be used in SQL query.Obtained train & val accuracy of 87% and test accuracy of 82%.
+## **Methodology**
+1. **Paraphrasing**: 
+   - Utilized the T5_Paraphrased_Paws pretrained model to paraphrase the WikiSQL questions while maintaining their semantic meaning.
+   - Performed paraphrasing on the entire training and validation datasets of WikiSQL.
 
-For translation of text to SQL:
-	a)Used unparaphrased wikisql dataset and applied SEQ2SEQ model to obtain simple queries(Evaluation metric used: BLU Score & Accuracy)
-	b)Used spider dataset and applied pretrained BART model to achieve complex queries.(Evaluation metric used:Rouge Score)
+2. **Classification**:
+   - Merged all paraphrased datasets and applied a Naive Bayes Classifier to identify aggregates (e.g., MIN, MAX, COUNT, AVG) used in SQL queries.
+   - Achieved a training and validation accuracy of 87% and a test accuracy of 82%.
 
->bayes_wikisql.ipynb:contains bayes classifier to identify aggregates to be used in sql query 
->text_to_sql_wikisql_paraphrasing.ipynb: contains paraphrased wikisql dataset& implemented seq2seq model for sql generation
->text_to_sql_wikisql_w/oparaphrase.ipynb: contains seq2seq model for text to sql without paraphrasing the dataset
->text_to_sql_spider_BART.ipynb: contians BART model for complex queries
+3. **Text-to-SQL Translation**:
+   1. **Simple Queries**: Applied a SEQ2SEQ model to the *unparaphrased WikiSQL* dataset to generate simple SQL queries. 
+     - **Evaluation Metrics**: BLEU Score & Accuracy
+   2. **Complex Queries**: Used the pretrained BART model with the *Spider dataset* to generate complex SQL queries. 
+     - **Evaluation Metrics**: ROUGE Score
+
+## **Files**
+- **[bayes_wikisql.ipynb]**: Implements Naive Bayes Classifier to identify aggregates for SQL queries.
+- **[text_to_sql_wikisql_paraphrasing.ipynb]**: Contains the paraphrased WikiSQL dataset and the SEQ2SEQ model for SQL generation.
+- **[text_to_sql_wikisql_woparaphrase.ipynb]**: Implements the SEQ2SEQ model for SQL generation using the original WikiSQL dataset without paraphrasing.
+- **[text_to_sql_spider_BART.ipynb]**: Utilizes the BART model for generating complex SQL queries from the Spider dataset.
+       
+
