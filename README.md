@@ -18,7 +18,7 @@ The goal is to create an effective system for generating SQL queries from textua
 3. **Text-to-SQL Translation**:
    1. **Simple Queries**: Applied a SEQ2SEQ model to the *unparaphrased WikiSQL* dataset to generate simple SQL queries. 
      - **Evaluation Metrics**: BLEU Score & Accuracy
-   2. **Complex Queries**: Used the pretrained BART model with the *Spider dataset* to generate complex SQL queries. 
+   2. **Complex Queries**: Used the pretrained **BART**(fusion of BERT + GPT) model with the *Spider dataset* to generate complex SQL queries(joins and nested queries). 
      - **Evaluation Metrics**: ROUGE Score
 
 ## **Files**
