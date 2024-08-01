@@ -27,4 +27,6 @@ The goal is to create an effective system for generating SQL queries from textua
 - **[text_to_sql_wikisql_woparaphrase.ipynb]**: Implements the SEQ2SEQ model for SQL generation using the original WikiSQL dataset without paraphrasing.
 - **[text_to_sql_spider_BART.ipynb]**: Utilizes the BART model for generating complex SQL queries from the Spider dataset.
        
+## **Future Enhancements**
+- Include a voice enabled feature, that converts spoken questions to sql queries
 
