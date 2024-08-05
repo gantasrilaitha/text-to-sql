@@ -18,8 +18,12 @@ The goal is to create an effective system for generating SQL queries from textua
 3. **Text-to-SQL Translation**:
    1. **Simple Queries**: Applied a SEQ2SEQ model to the *unparaphrased WikiSQL* dataset to generate simple SQL queries. 
      - **Evaluation Metrics**: BLEU Score & Accuracy
+     - Achieved Bleu score of 0.2 using paraphrasing on wikisql dataset
+     - Achieved Bleu score of 0.12 without paraphrasing on wikisql dataset
+       
    2. **Complex Queries**: Used the pretrained **BART**(fusion of BERT + GPT) model with the *Spider dataset* to generate complex SQL queries(joins and nested queries). 
      - **Evaluation Metrics**: ROUGE Score
+     - Achieved RougeL Score of 0.4 using spider dataset
 
 ## **Files**
 - **[bayes_wikisql.ipynb]**: Implements Naive Bayes Classifier to identify aggregates for SQL queries.
