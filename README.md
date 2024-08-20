@@ -1,5 +1,5 @@
 # Translation of Text-To-Sql 
-Translating natural language question to sel query wrt to database schema.
+Translating natural language question to sql query wrt to database schema.
 The goal is to create an effective system for generating SQL queries from textual questions, enabling natural language interfaces to databases.
 
 ## **Datasets Used**
